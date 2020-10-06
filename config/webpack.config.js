@@ -89,6 +89,7 @@ module.exports = function(webpackEnv) {
         // package.json
         loader: require.resolve('postcss-loader'),
         options: {
+        
           // Necessary for external CSS imports to work
           // https://github.com/facebook/create-react-app/issues/2677
           ident: 'postcss',
@@ -432,6 +433,9 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders({
                 importLoaders: 1,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
+                modules: {
+                  localIdentName: '[name]__[local]--[hash:base64:5]',
+                },
               }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
