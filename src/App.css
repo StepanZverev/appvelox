@@ -1,5 +1,7 @@
 .App {
-    background-color: yellow;
-    width: 100px;
-    height: 100px;
+    
+}
+
+.content {
+    flex-grow:1;
 }

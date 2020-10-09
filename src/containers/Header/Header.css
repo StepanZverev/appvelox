@@ -1,0 +1,29 @@
+.Header {
+    height: 55px;
+    background: #50caff;
+    display: flex;
+    align-items: center;
+    padding: 5px 40px;
+}
+
+.title {
+    margin: 0;
+    flex-grow: 1;
+
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33px;
+    color: #fff;
+}
+
+.btn {
+    width: 18px;
+    height: 18px;
+    margin-right: 20px;
+    background-color: #fff;
+    mask-repeat: no-repeat;
+}
+
+.buttons {
+    display: flex;
+}

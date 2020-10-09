@@ -1,0 +1,23 @@
+.Profile {
+    display: flex;
+    align-items: center;
+}
+
+.photo {
+    border-radius: 50%;
+    margin-right: 7px;
+    border: 1px solid #fff;
+    padding: 1px;
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+
+    background: #ffffff;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

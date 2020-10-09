@@ -1,0 +1,6 @@
+.Services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: stretch;
+}

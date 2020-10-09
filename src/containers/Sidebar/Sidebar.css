@@ -1,0 +1,85 @@
+.Sidebar {
+    min-width: 190px;
+    padding-bottom: 16px;
+    background-color: #003b72;
+
+    display: flex;
+    flex-direction: column;
+}
+.nav_list {
+    padding: 0;
+    margin: 0;
+}
+
+.nav_item {
+    padding: 14px 20px;
+    transition: all 0.3s;
+    color: #ffffff;
+}
+
+.nav_item:hover {
+    background-color: #fcfcfc;
+    box-shadow: inset 3px 0 0 0 #7761ff;
+    color: #7761ff;
+    cursor: pointer;
+}
+
+.nav_item + .nav_item {
+    margin-top: 10px;
+}
+
+.nav_item a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    color: inherit;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 14px;
+
+    mask-repeat: no-repeat;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.nav_item:hover .icon {
+    background-color: #7761ff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    min-height: 55px;
+    padding-left: 20px;
+
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+}
+
+.space {
+    padding: 10px 20px 0;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.appvelox {
+    margin-left: 20px;
+    margin-top: 4px;
+    width: max-content;
+}
+

@@ -1,0 +1,63 @@
+.Card {
+    flex-grow: 1;
+    display: flex;
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    max-height: 475px;
+
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px #ebe7ff;
+    border-radius: 5px;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.button {
+    align-self: flex-end;
+}
+
+.date {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    margin-bottom: 5px;
+}
+
+.clinic {
+    width: 280px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+
+    margin-bottom: 10px;
+}
+
+.doctor {    
+    display: flex;
+    align-items: center;
+}
+
+.photo {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.doctor_info {
+
+}
+
+.name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.department {
+    font-size: 14px;
+    line-height: 17px;
+    color: #EBE7FF;
+}

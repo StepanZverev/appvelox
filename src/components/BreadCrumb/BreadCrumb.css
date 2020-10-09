@@ -1,0 +1,30 @@
+.BreadCrumb {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    padding-left: 40px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.link:hover .icon{
+    background-color: #50CAFF;
+}
+
+
+.icon {
+    display: inline-block;
+    margin-right: 14px;
+    background-color: #000000;
+    width: 18px;
+    height: 18px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    
+}

@@ -1,0 +1,14 @@
+.Button {
+    font-family: inherit;
+    background: #7761ff;
+    border-radius: 5px;
+    border: none;
+    padding: 11px 15px;
+    
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}

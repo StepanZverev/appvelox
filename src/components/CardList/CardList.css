@@ -1,0 +1,31 @@
+.CardList {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    min-width: max-content;
+}
+
+.CardList.vertical {
+    height: 646px;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+    margin-right: 20px;
+    padding-right: 0;
+    
+    scrollbar-color: #003B72;
+    scrollbar-width: 8px;
+    scrollbar-track-color: #EBE7FF;
+}
+
+.more {
+    text-align: center;
+}
+
+.link {
+    color: #50caff;
+}
+
+
+
+
