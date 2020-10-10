@@ -1,9 +1,9 @@
 import React from 'react';
-import data from "../../data/data.json";
 import Card from '../Card/Card';
-import classes from './CardList.css'
+import classes from './CardList.css';
+import { NavLink } from 'react-router-dom';
 
-const days = [
+const DAY_NAMES = [
     "Воскресенье",
     "Понедельник",
     "Вторник",
@@ -15,19 +15,19 @@ const days = [
 
 
 function getFormatDate(date) {
-    const day = days[date.getDay()];
-    const formatDate = date.getDate()<10? `0${date.getDate()}`:date.getDate();
-    const formatMonth = date.getMonth()+1<10? `0${date.getMonth()+1}`:date.getMonth()+1;
-    const formatYear = date.getFullYear()%100;
+    const day = DAY_NAMES[date.getDay()];
+    const formatDate = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+    const formatMonth = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+    const formatYear = date.getFullYear() % 100;
 
     return `${day} ${formatDate}.${formatMonth}.${formatYear} | ${date.getHours()}:${date.getMinutes()}`
 }
 
-function renderCards(cardCount) {
+function renderCards(cards, cardCount) {
     let result = [];
 
     for (let i = 0; i < cardCount; i++) {
-        result[i] = data.cards[i];
+        result[i] = cards[i];
     }
 
     return (
@@ -51,25 +51,24 @@ function renderCards(cardCount) {
     )
 };
 
-function renderMore() {
-    const cardInPage = 2;
+function renderMore(amount) {
 
-    if (data.cards.length <= cardInPage) {
+    if (amount <= 0) {
         return null;
     }
 
     return (
         <div className={classes.more}>
             <span>
-                Еще {data.cards.length - cardInPage} записи
+                Еще {amount} записи
         </span>
             <br />
-            <a
+            <NavLink
                 className={classes.link}
-                href={"/"}
+                to={"/appointments"}
             >
                 Подробнее
-        </a>
+        </NavLink>
         </div>
     )
 };
@@ -84,9 +83,9 @@ const CardList = props => {
     return (
         <div className={cls.join(" ")}>
 
-            {props.vertical ? renderCards(data.cards.length): renderCards(2)}
+            {props.vertical ? renderCards(props.cards, props.cards.length) : renderCards(props.cards, 2)}
 
-            {props.vertical ? null : renderMore()}
+            {props.vertical ? null : renderMore(props.cards.length - 2)}
         </div>
     )
 }

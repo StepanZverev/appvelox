@@ -1,8 +1,9 @@
 .BreadCrumb {
     display: flex;
     align-items: center;
-    height: 46px;
-    padding-left: 40px;
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 .link {
@@ -13,10 +14,9 @@
     color: inherit;
 }
 
-.link:hover .icon{
-    background-color: #50CAFF;
+.link:hover .icon {
+    background-color: #50caff;
 }
-
 
 .icon {
     display: inline-block;
@@ -26,5 +26,4 @@
     height: 18px;
     mask-repeat: no-repeat;
     mask-position: center;
-    
 }

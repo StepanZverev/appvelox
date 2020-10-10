@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import classes from './Profile.css';
-import CardList from '../../components/CardList/CardList'
+import CardList from '../../components/CardList/CardList';
 import Services from '../Services/Services';
+import data from '../../data/data.json';
 
 export default class Profile extends Component {
 
@@ -12,7 +13,7 @@ export default class Profile extends Component {
                     Записи на прием
                 </div>
 
-                <CardList vertical={false}/> 
+                <CardList vertical={false} cards={data.cards}/> 
 
                 <div className={classes.title}>
                     Электронная карта

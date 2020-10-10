@@ -58,6 +58,21 @@ export default class Calendar extends React.Component {
         this.props.onChange(date);
     };
 
+    renderMark(date) {
+        const number = this.props.markList.filter(e => calendar.areEqual(e, date)).length;
+
+        if (!number) {
+            return null;
+        }
+
+        return (
+            <span className={classes.mark}>
+                {number}
+            </span>
+        )
+
+    }
+
     render() {
         const { monthNames, weekDayNames } = this.props;
         const { selectedDate } = this.state;
@@ -106,10 +121,14 @@ export default class Calendar extends React.Component {
                                     <td
                                         key={index}
                                         className={classnames(classes.day, {
-                                            [classes.selected]: calendar.areEqual(date, selectedDate)
+                                            [classes.selected]: calendar.areEqual(date, selectedDate),
+                                            [classes.disabled]: date < this.state.currentDate - 1
                                         })}
                                         onClick={() => this.handleDayClick(date)}
-                                    >{date.getDate()}</td>
+                                    >{date.getDate()}
+                                        {this.renderMark(date)}
+                                    </td>
+
                                     :
                                     <td key={index} />
                                 )}

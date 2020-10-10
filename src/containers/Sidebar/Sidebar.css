@@ -12,12 +12,12 @@
 }
 
 .nav_item {
-    padding: 14px 20px;
     transition: all 0.3s;
     color: #ffffff;
 }
 
-.nav_item:hover {
+.nav_item:hover,
+.nav_item.active {
     background-color: #fcfcfc;
     box-shadow: inset 3px 0 0 0 #7761ff;
     color: #7761ff;
@@ -32,6 +32,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding: 14px 20px;
 
     font-weight: 400;
     font-size: 14px;
@@ -53,7 +54,8 @@
     transition: all 0.3s;
 }
 
-.nav_item:hover .icon {
+.nav_item:hover .icon,
+.nav_item.active .icon {
     background-color: #7761ff;
 }
 
@@ -82,4 +84,5 @@
     margin-top: 4px;
     width: max-content;
 }
+
 

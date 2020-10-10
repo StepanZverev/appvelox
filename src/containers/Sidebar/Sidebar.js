@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import classes from './Sidebar.css';
-import Button from '../../components/Button/Button'
+import Button from '../../components/Button/Button';
+import {NavLink} from 'react-router-dom';
 
 const links = [
-    { to: "/", label: "Профиль", exact: true, iconUrl: "./img/heart.svg" },
-    { to: "/", label: "Врачи и клиники", exact: false, iconUrl: "./img/stethoscope.svg" },
-    { to: "/", label: "Сообщения", exact: false, iconUrl: "./img/speak.svg" },
-    { to: "/", label: "Тестирование", exact: false, iconUrl: "./img/test.svg" },
-    { to: "/", label: "Полезно знать", exact: false, iconUrl: "./img/book.svg" }
+    { to: "/profile", label: "Профиль", exact: true, iconUrl: "./img/heart.svg" },
+    { to: "/1", label: "Врачи и клиники", exact: false, iconUrl: "./img/stethoscope.svg" },
+    { to: "/2", label: "Сообщения", exact: false, iconUrl: "./img/speak.svg" },
+    { to: "/3", label: "Тестирование", exact: false, iconUrl: "./img/test.svg" },
+    { to: "/4", label: "Полезно знать", exact: false, iconUrl: "./img/book.svg" }
 ]
 
 export default class Sidebar extends Component {
-
     renderLinks() {
         return (links.map((link, index) => {
+            let cls = [classes.nav_item]
+
+            if (document.location.pathname.indexOf(link.to)!== -1) {
+                cls.push(classes.active)
+            }
+
             return (
-                <li key={index} className={classes.nav_item}>
-                    <a to={link.to} exact={link.exact} href={"/"}>
+                <li key={index} className={cls.join(' ')}>
+                    <NavLink to={link.to} exact={link.exact} href={"/"}>
                         <div
                             className={classes.icon}
                             style={{
@@ -25,7 +31,7 @@ export default class Sidebar extends Component {
                             }}>
                         </div>
                         {link.label}
-                    </a>
+                    </NavLink>
                 </li>
             );
         }));
@@ -46,13 +52,13 @@ export default class Sidebar extends Component {
                     <Button>Подать заявку</Button>
                 </div>
                 <div className={classes.nav_item}>
-                    <a href={"/"}>
+                    <NavLink to={"/5"}>
                         <div
                             className={classes.icon}
                             style={{ maskImage: "url('./img/help.svg')", WebkitMaskImage: "url('./img/help.svg')" }}>
                         </div>
                         Помощь
-                    </a>
+                    </NavLink>
                 </div>
                 <a
                     href={"http://appvelox.ru/"}
